@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "img": "https://d34zlyc2cp9zm7.cloudfront.net/products/2ee547d243641a7b2eb58b8b1cfe2b8961f1f4c4d9a8c9a061d8a547d71d4687.webp_200",
+    "name": "Producto 1",
+    "price": 23
+  },
+  {
+    "id": 2,
+    "img": "https://d34zlyc2cp9zm7.cloudfront.net/products/20220a6d9e29ea7e7deea0031a8aaba9d35416307a45b2accb3f2fc14865eb85.webp_200",
+    "name": "Producto 2",
+    "price": 100
+  }
+]

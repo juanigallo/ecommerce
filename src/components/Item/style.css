@@ -1,0 +1,20 @@
+.itemContainer {
+  width: 500px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.imgContainer {
+  width: 100px;
+  display: flex;
+
+}
+
+.imgContainer img {
+  max-width: 100%;
+  max-height: 100%;
+}
