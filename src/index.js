@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import App from './pages/App';
+import Cart from './pages/Cart'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Route exact component={App} path='/' />
+    <Route exact component={Cart} path='/carrito' />
+  </Router>,
   document.getElementById('root')
 );
 

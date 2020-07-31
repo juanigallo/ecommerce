@@ -1,31 +1,34 @@
 import React from 'react'
 import Total from '../Total'
 import Item from '../Item'
-import products from '../../data/products.json'
 
 class Summary extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      totalPrice: 0
+      totalPrice: 0,
+      products: []
     }
   }
 
   componentDidMount() {
     let totalPrice = 0
+    const stringifiedProducts = localStorage.getItem('cart')
+    if (stringifiedProducts) {
+      const products = JSON.parse(stringifiedProducts)
+      products.map((product) => {
+        totalPrice = totalPrice + product.price
+      })
 
-    products.map((product) => {
-      totalPrice = totalPrice + product.price
-    })
-
-    this.setState({
-      totalPrice: totalPrice
-    })
+      this.setState({
+        totalPrice: totalPrice,
+        products: products
+      })
+    }
   }
 
   handleCallback(action, price) {
-    console.log('LLEGUE AL CALLBACK', action, price)
     const { totalPrice } = this.state;
     const newTotalPrice = action == 'less' ? totalPrice - price : totalPrice + price
 
@@ -35,7 +38,7 @@ class Summary extends React.Component {
   }
 
   render() {
-    const { totalPrice } = this.state;
+    const { totalPrice, products } = this.state;
     return (
       <div>
         {products.map((product, key) => {
