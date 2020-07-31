@@ -12,7 +12,7 @@ class Item extends React.Component {
 
   handleClick(action) {
     const { qty } = this.state
-    const { price } = this.props.data
+    const { price, id } = this.props.data
     const newQty = action == 'less' ? qty - 1 : qty + 1
 
     if (newQty > 0) {
@@ -21,6 +21,8 @@ class Item extends React.Component {
       this.setState({
         qty: newQty
       })
+    } else if (newQty == 0) {
+      this.props.deleteCallback(id)
     }
   }
 
